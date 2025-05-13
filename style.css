@@ -1,60 +1,121 @@
 body {
-    font-family: 'Arial', sans-serif;
     margin: 0;
-    padding: 0;
-    background: #f5f5f5;
+    font-family: "Montserrat", Arial, sans-serif;
+    background: #f7f7f7;
+    color: #222;
 }
 
 nav {
-    background: #003262;
-    padding: 1rem;
-    margin-bottom: 2rem;
-    text-align: center;
+    background: #fff;
+    border-bottom: 2px solid #f7cd2e;
+    display: flex;
+    align-items: center;
+    padding: 0 2rem;
+    height: 60px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+nav .site-title {
+    font-weight: bold;
+    font-size: 1.3rem;
+    margin-right: 2rem;
+    color: #222;
+    letter-spacing: 1px;
 }
 
 nav a {
-    color: white;
+    color: #222;
     text-decoration: none;
-    margin: 0 1.5rem;
-    font-weight: bold;
-    font-size: 1.1em;
+    margin: 0 1.2rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding-bottom: 4px;
+    border-bottom: 3px solid transparent;
+    transition: border 0.2s;
 }
 
-nav a:hover {
-    text-decoration: underline;
+nav a.active, nav a:hover {
+    border-bottom: 3px solid #f7cd2e;
 }
 
-.content {
+.header-section {
+    background: url('assets/hero-bg.jpg') center/cover no-repeat;
+    min-height: 260px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.header-section .main-title {
+    font-size: 2.7rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin: 2rem 0 0.5rem 0;
+    color: #222;
+    text-align: center;
+}
+
+.header-section .yellow-bar {
+    width: 120px;
+    height: 7px;
+    background: #f7cd2e;
+    margin: 0.5rem 0 2rem 0;
+    border-radius: 3px;
+}
+
+.page-content {
     max-width: 900px;
-    margin: 0 auto;
-    background: white;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    margin: 2.5rem auto 2rem auto;
+    background: none;
+    padding: 0 1.2rem;
 }
 
-.hero-image, .diagram, .state-diagram {
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 2.5rem;
+    margin-bottom: 0.7rem;
+    color: #222;
+    letter-spacing: 1px;
+}
+
+.section-bar {
+    width: 80px;
+    height: 5px;
+    background: #f7cd2e;
+    margin-bottom: 1.5rem;
+    border-radius: 2px;
+}
+
+.hero-image {
     width: 100%;
-    max-width: 600px;
+    max-width: 500px;
     display: block;
-    margin: 1.5rem auto;
-    border-radius: 8px;
+    margin: 2rem auto 1rem auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px #0001;
 }
 
 .highlight-box {
-    background: #f7dc6f;
-    border-left: 5px solid #003262;
-    padding: 1rem;
-    margin: 1.5rem 0;
-    border-radius: 4px;
-    font-size: 1.1em;
+    background: #f7cd2e;
+    color: #222;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 1.1rem 1.5rem;
+    margin: 2rem 0;
+    border-radius: 6px;
+    border-left: 7px solid #222;
 }
 
 .team-grid {
     display: flex;
-    gap: 2rem;
+    gap: 2.5rem;
     justify-content: center;
-    margin: 2rem 0;
+    margin: 2.5rem 0;
 }
 
 .team-member {
@@ -64,50 +125,56 @@ nav a:hover {
 .team-member img {
     width: 120px;
     height: 120px;
-    border-radius: 50%;
+    border-radius: 60px;
     object-fit: cover;
-    border: 3px solid #003262;
-    margin-bottom: 0.5rem;
+    border: 3px solid #f7cd2e;
+    margin-bottom: 0.7rem;
 }
 
-.cad-grid {
+.cad-grid, .extra-photos {
     display: flex;
     gap: 1.5rem;
     justify-content: center;
     margin: 1.5rem 0;
 }
 
-.cad-grid img {
-    width: 220px;
+.cad-grid img, .extra-photos img {
+    width: 210px;
     border-radius: 8px;
     background: #eee;
     padding: 5px;
 }
 
 .code-block {
-    background: #2d2d2d;
-    color: #fff;
+    background: #222;
+    color: #f7cd2e;
     padding: 1rem;
     border-radius: 4px;
     overflow-x: auto;
     margin: 2rem 0;
+    font-family: "Fira Mono", monospace;
+    font-size: 1rem;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
     margin: 2rem 0;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
+    border: 1px solid #eee;
+    padding: 10px 12px;
     text-align: left;
 }
 
 th {
-    background: #003262;
-    color: white;
+    background: #f7cd2e;
+    color: #222;
+    font-weight: 700;
 }
 
 video {
@@ -115,4 +182,11 @@ video {
     margin: 2rem auto;
     border-radius: 8px;
     background: #222;
+}
+
+@media (max-width: 900px) {
+    .team-grid, .cad-grid, .extra-photos {
+        flex-direction: column;
+        align-items: center;
+    }
 }
