@@ -1,13 +1,24 @@
 body {
     margin: 0;
-    font-family: "Montserrat", Arial, sans-serif;
+    font-family: 'DM Sans', Arial, sans-serif;
     background: #f7f7f7;
     color: #222;
 }
 
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: url('assets/cheese_grating.png') center/cover no-repeat;
+    filter: grayscale(100%) brightness(50%);
+    opacity: 0.2;
+}
+
 nav {
-    background: #fff;
-    border-bottom: 2px solid #f7cd2e;
+    background: #003262;
     display: flex;
     align-items: center;
     padding: 0 2rem;
@@ -18,19 +29,19 @@ nav {
 }
 
 nav .site-title {
-    font-weight: bold;
+    font-weight: 500;
     font-size: 1.3rem;
     margin-right: 2rem;
-    color: #222;
+    color: white;
     letter-spacing: 1px;
 }
 
 nav a {
-    color: #222;
+    color: white;
     text-decoration: none;
     margin: 0 1.2rem;
-    font-weight: 600;
-    font-size: 1.1rem;
+    font-weight: 400;
+    font-size: 1rem;
     padding-bottom: 4px;
     border-bottom: 3px solid transparent;
     transition: border 0.2s;
@@ -41,27 +52,28 @@ nav a.active, nav a:hover {
 }
 
 .header-section {
-    background: url('assets/hero-bg.jpg') center/cover no-repeat;
-    min-height: 260px;
+    background: rgba(255, 255, 255, 0.8);
+    min-height: 200px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
+    margin-bottom: 2rem;
 }
 
-.header-section .main-title {
-    font-size: 2.7rem;
-    font-weight: 900;
+.main-title {
+    font-size: 2.5rem;
+    font-weight: 700;
     letter-spacing: 2px;
     margin: 2rem 0 0.5rem 0;
     color: #222;
     text-align: center;
 }
 
-.header-section .yellow-bar {
+.yellow-bar {
     width: 120px;
-    height: 7px;
+    height: 5px;
     background: #f7cd2e;
     margin: 0.5rem 0 2rem 0;
     border-radius: 3px;
@@ -69,46 +81,47 @@ nav a.active, nav a:hover {
 
 .page-content {
     max-width: 900px;
-    margin: 2.5rem auto 2rem auto;
-    background: none;
-    padding: 0 1.2rem;
+    margin: 0 auto 2rem auto;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
 .section-title {
-    font-size: 2rem;
-    font-weight: 700;
+    font-size: 1.8rem;
+    font-weight: 600;
     margin-top: 2.5rem;
     margin-bottom: 0.7rem;
     color: #222;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
 }
 
 .section-bar {
     width: 80px;
-    height: 5px;
+    height: 4px;
     background: #f7cd2e;
     margin-bottom: 1.5rem;
     border-radius: 2px;
-}
-
-.hero-image {
-    width: 100%;
-    max-width: 500px;
-    display: block;
-    margin: 2rem auto 1rem auto;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px #0001;
 }
 
 .highlight-box {
     background: #f7cd2e;
     color: #222;
     font-size: 1.1rem;
-    font-weight: 600;
+    font-weight: 400;
     padding: 1.1rem 1.5rem;
     margin: 2rem 0;
     border-radius: 6px;
-    border-left: 7px solid #222;
+}
+
+.hero-image {
+    width: 100%;
+    max-width: 600px;
+    display: block;
+    margin: 1.5rem auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
 .team-grid {
@@ -116,6 +129,7 @@ nav a.active, nav a:hover {
     gap: 2.5rem;
     justify-content: center;
     margin: 2.5rem 0;
+    flex-wrap: wrap;
 }
 
 .team-member {
@@ -136,6 +150,7 @@ nav a.active, nav a:hover {
     gap: 1.5rem;
     justify-content: center;
     margin: 1.5rem 0;
+    flex-wrap: wrap;
 }
 
 .cad-grid img, .extra-photos img {
@@ -147,13 +162,13 @@ nav a.active, nav a:hover {
 
 .code-block {
     background: #222;
-    color: #f7cd2e;
+    color: #f7f7f7;
     padding: 1rem;
     border-radius: 4px;
     overflow-x: auto;
     margin: 2rem 0;
     font-family: "Fira Mono", monospace;
-    font-size: 1rem;
+    font-size: 0.9rem;
 }
 
 table {
@@ -174,7 +189,7 @@ th, td {
 th {
     background: #f7cd2e;
     color: #222;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 video {
