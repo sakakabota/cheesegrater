@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Implementation - Cheese Grater Project</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="introduction.html">Introduction</a>
+        <a href="materials.html">Materials</a>
+        <a href="implementation.html">Implementation</a>
+        <a href="results.html">Results</a>
+    </nav>
+    <div class="content">
+        <h2>Software Integration</h2>
+        <p>
+            The cheese grater is controlled by an ESP32 running custom firmware. 
+            We use hardware timer interrupts for precise control of the lead screw and grater motors, 
+            and an encoder for position feedback. The state machine logic is implemented in C++ and 
+            ensures safe and reliable operation.
+        </p>
+        <p>
+            The main states are <strong>Idle</strong>, <strong>Cheese Compress</strong>, <strong>Hold Compress</strong>, and <strong>Decompress</strong>. 
+            Transitions are triggered by button presses and timer/encoder events, ensuring the device 
+            operates safely and efficiently.
+        </p>
+        <h3>State Transition Diagram</h3>
+        <img src="assets/state_diagram.png" alt="State Diagram" class="state-diagram">
+        <h3>Sample Source Code</h3>
+        <div class="code-block">
+<pre>
+enum State {
+    idle,
+    cheeseCompress,
+    holdCompress,
+    deCompress
+};
+
+void loop() {
+    switch (state) {
+        case idle:
+            if (CheckForButtonPress()) { state = cheeseCompress; }
+            break;
+        case cheeseCompress:
+            driveMotorForward(25);
+            state = holdCompress;
+            break;
+        case holdCompress:
+            startTimer();
+            while (!fiveSecondFlag) { delay(1); }
+            stopTimer();
+            state = deCompress;
+            break;
+        case deCompress:
+            driveMotorBackward(25);
+            state = idle;
+            break;
+    }
+}
+</pre>
+        </div>
+        <h3>Wiring Diagram</h3>
+        <img src="assets/circuit_diagram.png" alt="Circuit Diagram" class="diagram">
+    </div>
+</body>
+</html>
