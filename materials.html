@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Materials - Cheese Grater Project</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="introduction.html">Introduction</a>
+        <a href="materials.html">Materials</a>
+        <a href="implementation.html">Implementation</a>
+        <a href="results.html">Results</a>
+    </nav>
+    <div class="content">
+        <h2>Hardware Overview</h2>
+        <p>
+            Our cheese grater is built around a Pololu gearmotor, a custom lead screw mechanism, and a rotary grater blade. 
+            The main structure is 3D printed for rapid prototyping and easy customization. Safety was a key concern, so 
+            we incorporated a robust enclosure and a spring-loaded cheese pusher to keep hands away from moving parts.
+        </p>
+        <img src="assets/labeledparts.png" alt="Labeled Parts" class="diagram">
+        <h3>Bill of Materials</h3>
+        <table>
+            <tr><th>Component</th><th>Cost</th></tr>
+            <tr><td>Pololu Gearmotor</td><td>$114.55</td></tr>
+            <tr><td>DRV8871 Motor Driver</td><td>$9.95</td></tr>
+            <tr><td>ESP32 Dev Board</td><td>$13.99</td></tr>
+            <tr><td>INA219 Current Sensor</td><td>$7.99</td></tr>
+            <tr><td>3D Printed Parts</td><td>$60.00</td></tr>
+            <tr><td>Miscellaneous Hardware</td><td>$20.00</td></tr>
+            <tr><td><strong>Total</strong></td><td><strong>$377.80</strong></td></tr>
+        </table>
+        <h2>CAD & Assembly</h2>
+        <p>
+            The device was designed in Fusion 360. The lead screw, crank, and chute assemblies were iteratively prototyped and tested for 
+            strength and ease of assembly. Below are some of our key CAD renderings:
+        </p>
+        <div class="cad-grid">
+            <img src="assets/chute.png" alt="Chute Assembly">
+            <img src="assets/crank.png" alt="Crank Assembly">
+        </div>
+        <h2>Extra Photos</h2>
+        <div class="cad-grid">
+            <img src="assets/placeholder-photo1.jpg" alt="Extra Photo 1">
+            <img src="assets/placeholder-photo2.jpg" alt="Extra Photo 2">
+        </div>
+    </div>
+</body>
+</html>
